@@ -1,0 +1,21 @@
+{
+    "drinks": [
+      {
+        "name": "Silver Chariot",
+        "photo": "/images/1"
+      },
+      {
+        "name": "Golden Tea",
+        "photo": "/images/2"
+      },
+      {
+        "name": "Cotton Wind",
+        "photo": "/images/3"
+      },
+      {
+        "name": "Cherry Bomb",
+        "photo": "/images/4"
+      }
+    ]
+  }
+  

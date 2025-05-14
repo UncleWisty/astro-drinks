@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import drinksData from '../data/drinks.json';
+import '../styles/index.css';
+---
+
+<Layout>
+  <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/">Inicio</a></li>
+        <li class="nav-item"><a href="/bebidas">Bebidas</a></li>
+        <li class="nav-item"><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+	
+  <section class="cta">
+    <video class="cta-video" autoplay playsinline muted loop preload="auto"> 
+      <source src="/videos/CTA_drinks.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <div class="cta-overlay">
+      <button class="cta-button">Comprar ahora</button>
+    </div>
+  </section>
+
+  <!-- Sección de bebidas -->
+  <section class="container">
+    {drinksData.drinks.map((drink) => (
+      <a href=""><picture class="drink">
+        <source srcset={`${drink.photo}.avif`} />
+        <img src={`${drink.photo}.png`} alt={`${drink.name}`} class="drink" />
+      </picture>
+	  </a>
+    ))}
+  </section>
+</Layout>
+
