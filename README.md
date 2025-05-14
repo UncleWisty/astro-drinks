@@ -1,1 +1,1 @@
-<img src="/images/silly.gif"/>
+<img src="https://tenor.com/search/cat-staring-gifs"/>
