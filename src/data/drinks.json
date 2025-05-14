@@ -1,20 +1,25 @@
 {
     "drinks": [
       {
+        "id":0,
         "name": "Silver Chariot",
-        "photo": "/images/1"
+        "photo": "/images/1",
+        "description":"Un viaje sideral en plata. Su sabor metálico y frío te impulsa hacia horizontes de innovación y precisión."
       },
       {
         "name": "Golden Tea",
-        "photo": "/images/2"
+        "photo": "/images/2",
+        "description":"La esencia ancestral del té se funde con destellos de Roma. Una infusión dorada que despierta la mente para conquistar el tiempo."
       },
       {
         "name": "Cotton Wind",
-        "photo": "/images/3"
+        "photo": "/images/3",
+        "description":"Ligero como una brisa etérea, Cotton Wind ofrece una experiencia suave y etérea, tan sutil como un susurro del mañana."
       },
       {
         "name": "Cherry Bomb",
-        "photo": "/images/4"
+        "photo": "/images/4",
+        "description":"La reina de la cereza. Su intensidad vibrante te catapulta a nuevas dimensiones de sabor."
       }
     ]
   }

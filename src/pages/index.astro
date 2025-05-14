@@ -8,13 +8,12 @@ import '../styles/index.css';
   <nav class="navbar">
       <ul class="nav-list">
         <li class="nav-item"><a href="/">Inicio</a></li>
-        <li class="nav-item"><a href="/bebidas">Bebidas</a></li>
-        <li class="nav-item"><a href="/contacto">Contacto</a></li>
+        <li class="nav-item"><a href="#about">Bebidas</a></li>
+        <li class="nav-item"><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
-	
   <section class="cta">
-    <video class="cta-video" autoplay playsinline muted loop preload="auto"> 
+    <video class="cta-video" autoplay playsinline muted loop preload="auto" poster="/images/silly.gif"> 
       <source src="/videos/CTA_drinks.mp4" type="video/mp4" />
       Tu navegador no soporta la reproducción de video.
     </video>
@@ -22,16 +21,91 @@ import '../styles/index.css';
       <button class="cta-button">Comprar ahora</button>
     </div>
   </section>
-
+  <section class="about-drinks" >
+    <h2>Hyper Rush</h2>
+	<hr>
+    <p>
+	El puente hacia un futuro donde la innovación y la adrenalina se encuentran en perfecta armonía. Descubre la vanguardia en energía, donde el mañana se bebe hoy.
+    </p>
+	
+  </section>
   <!-- Sección de bebidas -->
-  <section class="container">
+  <section class="container" >
     {drinksData.drinks.map((drink) => (
-      <a href=""><picture class="drink">
+      <a href="#about"><picture class="drink">
         <source srcset={`${drink.photo}.avif`} />
         <img src={`${drink.photo}.png`} alt={`${drink.name}`} class="drink" />
       </picture>
 	  </a>
     ))}
   </section>
+<section class="drinks-detail-section" id="about">
+    {drinksData.drinks.map((drink, index) => (
+      <section class="drink-detail">
+        { index % 2 === 0 ? (
+          <>
+            <div class="drink-image">
+              <picture>
+                <source srcset={`${drink.photo}.avif`} />
+                <img src={`${drink.photo}.png`} alt={drink.name} />
+              </picture>
+            </div>
+            <div class="drink-description">
+              <h3>{drink.name}</h3>
+              <p>{drink.description}</p>
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="drink-description">
+              <h3>{drink.name}</h3>
+              <p>{drink.description}</p>
+            </div>
+            <div class="drink-image">
+              <picture>
+                <source srcset={`${drink.photo}.avif`} />
+                <img src={`${drink.photo}.png`} alt={drink.name} />
+              </picture>
+            </div>
+          </>
+        )}
+      </section>
+    ))}
+  </section>
+
+  <footer class="footer" id="contact">
+  <div class="footer-section">
+    <h4>Acerca de</h4>
+    <ul>
+      <li><a href="">Sobre Nosotros</a></li>
+      <li><a href="">Historia</a></li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h4>Contacto</h4>
+    <ul>
+      <li><a href="">Contáctanos</a></li>
+      <li><a href="">Ubicación</a></li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="">Términos de Uso</a></li>
+      <li><a href="">Política de Privacidad</a></li>
+    </ul>
+  </div>
+</footer>
+  <script>
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 1000) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  });
+</script>
 </Layout>
 
